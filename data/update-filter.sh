@@ -23,7 +23,7 @@ PROCESS_IPSPAM=yes
 INPUT_IPSPAM=http://www.ipspamlist.com/public_feeds.csv
 OUTPUT_IPSPAM=$GETDIR/ipspam.txt
 
-PROCESS_MANUAL=no
+PROCESS_MANUAL=yes
 INPUT_MANUAL=manual.txt
 
 PROCESS_EXCEPTIONS=yes
