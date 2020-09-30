@@ -1,6 +1,11 @@
 # frr-bgp-blackholer
 BGP Blackhole Service
 
+## Idea ##
+There are 2 containers:
+* **frr-bgp** which job is to communicate with your border routers, additinally it runs a cronjob every hour to process a file (`/etc/frr/frr-input.txt`) with the routing updates
+* **blackholer** is just an alpine container which has a cronjob to download every 15min the blacklists and provide the input file (`/etc/frr/frr-input.txt`)
+
 ## Configuration/Installation ##
 ### Cisco Router ###
 please check `cisco-config.cfg` as reference how to implement this to your cisco router.
