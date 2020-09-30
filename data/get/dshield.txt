@@ -1,0 +1,49 @@
+#      
+#   DShield.org Recommended Block List 
+#    (c) 2020 DShield.org
+#   some rights reserved. Details http://creativecommons.org/licenses/by-nc-sa/2.5/
+#   use on your own risk. No warranties implied.
+#   primary URL: http://feeds.dshield.org/block.txt
+#     PGP Sign.: http://feeds.dshield.org/block.txt.asc
+#
+#   comments: info@dshield.org
+#    updated: Tue Sep 29 14:00:19 2020 UTC
+#   
+#    This list summarizes the top 20 attacking class C (/24) subnets
+#   over the last three days. The number of 'attacks' indicates the 
+#   number of targets reporting scans from this subnet.
+#
+#
+#    Columns (tab delimited):
+#
+#    (1) start of netblock  
+#    (2) end of netblock
+#    (3) subnet (/24 for class C)
+#    (4) number of targets scanned
+#    (5) name of Network 
+#    (6) Country
+#    (7) contact email address
+#
+#    If a range is assigned to multiple users, the first one is listed. 
+#     
+Start	End	Netmask	Attacks	Name	Country	email
+45.129.33.0	45.129.33.255	24	3807	INT-NETWORK	SC	abuse@ipvolume.net
+88.214.24.0	88.214.24.255	24	2287	NFORCE	NL	abuse@nforce.com
+193.27.228.0	193.27.228.255	24	1654	SELECTEL	RU	abuse@selectel.ru
+87.251.74.0	87.251.74.255	24	1271	ASKONTEL	RU	abusemail@contell.ru
+193.228.91.0	193.228.91.255	24	877	REBECCAHOST	US	ird@ttc72.ru
+195.54.161.0	195.54.161.255	24	807	SELECTEL	RU	abuse@selectel.ru
+45.95.168.0	45.95.168.255	24	801	GIGANET-HU GigaNet Internet Service Provider Co	HU	abuse@giganet.hu
+45.227.255.0	45.227.255.255	24	791	NFORCE	NL	abuse@nforce.com
+176.113.115.0	176.113.115.255	24	697	SELECTEL	RU	abuse@selectel.ru
+94.102.49.0	94.102.49.255	24	667	INT-NETWORK	SC	abuse@ipvolume.net
+37.49.230.0	37.49.230.255	24	645	SQUITTER-NETWORKS	NL	abuse@squitter.eu
+45.146.164.0	45.146.164.255	24	641	SELECTEL	RU	abuse@selectel.ru
+85.239.35.0	85.239.35.255	24	610	PQ-HOSTING-AS	MD	it@eurolines.ro
+141.98.81.0	141.98.81.255	24	598	HOSTKEY-AS	NL	abuse@hostkey.nl
+167.248.133.0	167.248.133.255	24	594	CENSYS-ARIN-03	US	
+88.214.26.0	88.214.26.255	24	589	FCLOUD-AS	DE	abuse@fcloud.biz
+103.145.13.0	103.145.13.255	24	578	SQUITTER-NETWORKS	NL	abuse@squitter.eu
+162.243.128.0	162.243.128.255	24	537	DIGITALOCEAN-ASN	US	abuse@digitalocean.com
+94.102.51.0	94.102.51.255	24	534	INT-NETWORK	SC	abuse@ipvolume.net
+83.97.20.0	83.97.20.255	24	526	M247	GB	abuse@m247.com

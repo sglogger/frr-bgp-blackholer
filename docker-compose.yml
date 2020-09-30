@@ -1,0 +1,25 @@
+version: "3.3"
+
+# priviledged mode needed for security caps
+services:
+  frr:
+    container_name: "frr-bgp"
+    build:
+      context: './frr/'
+    privileged: true
+    restart: unless-stopped
+    volumes:
+      - ./etc/frr:/etc/frr
+      - ./data/frr-input.txt:/etc/frr/frr-input.txt
+    network_mode: "host"
+
+  blackholer:
+    build:
+      context: './blackholer/'
+    container_name: blackholer
+    volumes:
+      - ./data:/data
+      - ./data/update-filter.sh:/etc/periodic/15min/update-filter:ro
+    restart: unless-stopped
+    # needed to see local routing table
+    network_mode: "host"
