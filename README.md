@@ -41,6 +41,12 @@ INPUT_EXCEPTIONS=exceptions.txt
 you can also define own prefix to filter out in the `manual.txt` file and specify such you want to exclude in the `execptions.txt` file (execption leads to a `no ip route ...` statement).
 
 
+### Docker ###
+Then of course:
+```
+docker-compose build
+docker-compose up -d
+```
 
 ## Issues / Optimization Potential ##
 Now the cron will remove all routers and re-add the new/existing ones every hour. I will improve it by working with incremental updates
