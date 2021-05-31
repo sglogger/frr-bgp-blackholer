@@ -1,0 +1,6 @@
+# ignore routing db
+routing.db
+exist.txt
+dbimport.txt
+dbwhite.txt
+exceptions.txt

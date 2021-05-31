@@ -3,6 +3,11 @@
 IFS=$'\n'
 cd /data
 OUTPUT=/data/frr-input.txt
+## for python db
+OUTPUT_EXIST=/data/exist.txt
+OUTPUT_ADD=/data/dbimport.txt
+OUTPUT_WHITE=/data/dbwhite.txt
+
 GETDIR=/data/get
 AGE=45		# in mins
 
@@ -55,6 +60,7 @@ date
 echo "getting bgp/routing data..."
 #populate routing table
 route -ne | grep lo$ | awk '{print "no ip route " $1 " " $3 " Null0" }' > $OUTPUT
+route -ne | grep lo$ | awk '{print $1 " " $3 }' > $OUTPUT_EXIST
 
 
 #================================================================
@@ -76,6 +82,11 @@ if [[ "$PROCESS_BOGONS" == "yes"  ]]; then
 	        cidr2mask $MASK >> $OUTPUT
 	        echo -n " Null0" >> $OUTPUT
 	        echo "" >> $OUTPUT
+
+		#python db
+	        echo -n "$NET " >> $OUTPUT_ADD
+	        cidr2mask $MASK >> $OUTPUT_ADD
+	        echo "" >> $OUTPUT_ADD
 	done
 else
 	echo "not processing BOGONS"
@@ -103,6 +114,11 @@ if [[ "$PROCESS_DSHIELD" == "yes"  ]]; then
 	        cidr2mask $MASK >> $OUTPUT
 	        echo -n " Null0" >> $OUTPUT
 	        echo "" >> $OUTPUT
+
+		#python db
+	        echo -n "$NET " >> $OUTPUT_ADD
+	        cidr2mask $MASK >> $OUTPUT_ADD
+	        echo "" >> $OUTPUT_ADD
 	done
 else
 	echo "not processing DSHIELD"
@@ -131,6 +147,11 @@ if [[ "$PROCESS_CINS" == "yes"  ]]; then
 	        cidr2mask $MASK >> $OUTPUT
 	        echo -n " Null0" >> $OUTPUT
 	        echo "" >> $OUTPUT
+
+		#python db
+	        echo -n "$NET " >> $OUTPUT_ADD
+	        cidr2mask $MASK >> $OUTPUT_ADD
+	        echo "" >> $OUTPUT_ADD
 	done
 else
 	echo "not processing CINS"
@@ -158,6 +179,11 @@ if [[ "$PROCESS_IPSPAM" == "yes"  ]]; then
 	        cidr2mask $MASK >> $OUTPUT
 	        echo -n " Null0" >> $OUTPUT
 	        echo "" >> $OUTPUT
+
+		#python db
+	        echo -n "$NET " >> $OUTPUT_ADD
+	        cidr2mask $MASK >> $OUTPUT_ADD
+	        echo "" >> $OUTPUT_ADD
 	done
 else
 	echo "not processing IPSPAM"
@@ -178,6 +204,11 @@ if [[ "$PROCESS_MANUAL" == "yes"  || ! -f $INPUT_MANUAL ]]; then
 	        cidr2mask $MASK >> $OUTPUT
 	        echo -n " Null0" >> $OUTPUT
 	        echo "" >> $OUTPUT
+
+		#python db
+	        echo -n "$NET " >> $OUTPUT_ADD
+	        cidr2mask $MASK >> $OUTPUT_ADD
+	        echo "" >> $OUTPUT_ADD
 	done
 else
 	echo "not processing MANUAL"
@@ -199,6 +230,11 @@ if [[ "$PROCESS_EXCEPTIONS" == "yes"  || ! -f $INPUT_EXCEPTIONS ]]; then
 	        cidr2mask $MASK >> $OUTPUT
 	        echo -n " Null0" >> $OUTPUT
 	        echo "" >> $OUTPUT
+
+		#python db
+	        echo -n "$NET " >> $OUTPUT_WHITE
+	        cidr2mask $MASK >> $OUTPUT_WHITE
+	        echo "" >> $OUTPUT_WHITE
 	done
 else
 	echo "not processing EXCEPTIONS"
