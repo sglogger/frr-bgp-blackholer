@@ -62,6 +62,9 @@ echo "getting bgp/routing data..."
 route -ne | grep lo$ | awk '{print "no ip route " $1 " " $3 " Null0" }' > $OUTPUT
 route -ne | grep lo$ | awk '{print $1 " " $3 }' > $OUTPUT_EXIST
 
+#================================================================
+echo "" > $OUTPUT_ADD
+echo "" > $OUTPUT_WHITE
 
 #================================================================
 # BOGONS
